@@ -1,0 +1,147 @@
+1. ANACONDA
+
+sudo apt install curl
+
+curl -O https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
+
+sha256sum Anaconda3-5.0.1-Linux-x86_64.sh
+
+bash Anaconda3-5.0.1-Linux-x86_64.sh
+
+conda search "^python$"
+
+conda create --name my_env python=3.6.3
+
+source activate my_env
+
+conda info --envs
+
+vim ~/.bashrc
+#export PATH="$HOME/anaconda3/bin:$PATH"
+
+conda update spyder
+
+#update
+#conda update conda
+#conda update anaconda
+#conda update python
+
+#uninstall
+#conda install anaconda-clean
+#rm -rf ~/anaconda3
+
+
+2.GIT
+
+sudo apt-get install git
+git config --global user.name "user"
+git init
+git clone path
+git checkout -b "ecdsa"
+
+
+3.GO_LANG
+
+sudo apt-get update
+sudo apt-get -y upgrade
+wget https://dl.google.com/go/go1.10.2.linux-amd64.tar.gz
+sudo tar -C $HOME -xvf go1.10.2.linux-amd64.tar.gz
+
+sudo vim ~/.profile
+export GOROOT=$HOME/go
+export GOPATH=$HOME/git/blockchain-tutorial
+export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+source ~/.profile
+
+4.IDE
+
+a) download IDE -> eclipse c/c++ 
+tar xzvf eclipse-cpp-oxygen-3a-linux-gtk-x86_64.tar.gz
+
+b) install ide plugins
+from marketplace install PyDev,GoClipse,GitHub Extension
+
+c) setup python
+menu->window->preferences->pydev-interpreters->python interpreter->new->path to python interpreter->apply
+
+Window->Open Perspective->Git 
+uri->https://github.com/ajfyrg/blockchain-python-tutorial.git
+git-clone 
+
+checkbox import all existing eclipse projects -> check
+
+File->New Project->Py Dev->Directory->$HOME/git/blockchain-python-tutorial
+
+set project name
+
+next (you'll see referenced project from git path)
+
+d) setup golang
+
+clone repository to the view
+uri->https://github.com/ajfyrg/blockchain-tutorial.git
+git-clone
+
+File->New Project->Go->Go Project->Directory->$HOME/git/blockchain-tutorial
+
+from terminal for each in dir execute command:
+mv example.env .env
+ 
+Window->Preferences->Go->set GOROOT ($HOME/go)
+
+go get github.com/davecgh/go-spew/spew
+go get github.com/gorilla/mux
+go get github.com/joho/godotenv
+go get github.com/ipfs/go-log"
+go get github.com/libp2p/go-libp2p
+go get github.com/libp2p/go-libp2p-crypto
+go get github.com/libp2p/go-libp2p-host
+go get github.com/libp2p/go-libp2p-net
+go get github.com/libp2p/go-libp2p-peer
+go get github.com/libp2p/go-libp2p-peerstore
+go get github.com/multiformats/go-multiaddr
+go get github.com/whyrusleeping/go-logging
+
+sudo mv $HOME/git/blockchain-tutorial/src/github.com $HOME/go/src
+sudo mv $HOME/git/blockchain-tutorial/src/golang.org $HOME/go/src
+
+go get   golang.org/x/tools/cmd/guru
+go build golang.org/x/tools/cmd/guru
+sudo mv guru $HOME/go/bin 
+
+go get github.com/rogpeppe/godef
+go build github.com/rogpeppe/godef
+sudo mv godef $HOME/go/bin
+
+IDE->Window->Prferences->Go->Set paths to go,godef,guru,gofmt
+
+5. C++
+
+clone repository to the view
+uri->https://github.com/ajfyrg/simple-blockchain
+git clone
+
+File->New->MakeFile Project with existing source->path to source
+
+sudo apt-get install libboost-all-dev
+sudo apt-get install cmake
+sudo apt-get install openssl
+sudo apt-get install json
+sudo apt-get install c++14
+sudo apt-get install simple-web-server
+Windows->Proferences>C/C++->Build->Settings->Discovery->CDT GCC Built-in Compiler Settings>Command to get compiler specs->append -std=c14
+Project->Properties->C/C++ Build->Settings:
+->GCC C++ Compiler->Dialect->Language Standard->ISO C++1y (-std=C++1y)
+->GCC C++ Linker->Libraries->Add->ssl,boost_system,pthread,crypto
+
+
+
+
+
+
+
+
+
+
+
+
